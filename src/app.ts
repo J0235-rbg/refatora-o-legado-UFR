@@ -1,5 +1,5 @@
 import express from 'express';
-import { OrderController } from './controllers/OrderController';
+import { OrderController } from './controllers/OrderControllerExample';
 
 const app = express();
 app.use(express.json());
