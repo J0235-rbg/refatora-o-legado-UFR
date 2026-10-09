@@ -1,15 +1,11 @@
 import { IProduct } from "./Interface/IProduct";
 
 export class PhysicalProduct implements IProduct {
-    id: number;
-    name: string;
-    price: number;
-
-    constructor(id: number, name: string, price: number) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-    }
+    constructor(
+        public id: number,
+        public name: string,
+        public price: number
+    ) {}
 
     calculateFreight(): number {
         return 10
