@@ -1,8 +1,6 @@
 import { IProduct } from "./Interface/IProduct";
 
 export class DigitalProduct implements IProduct {
-
-
     constructor(
         public id: number,
         public name: string,
