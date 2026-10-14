@@ -4,6 +4,8 @@ import { IOrderRepository, CreateOrderDTO } from './IOrderRepository';
 // Instância compartilhada ou injetada do PrismaClient
 const prisma = new PrismaClient();
 
+prisma
+
 export class PrismaOrderRepository implements IOrderRepository {
   async create(data: CreateOrderDTO): Promise<any> {
     return await prisma.order.create({

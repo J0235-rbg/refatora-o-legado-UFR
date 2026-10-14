@@ -17,8 +17,18 @@ model Product {
 model Order {
   id         Int      @id @default(autoincrement())
   customer   String
-  items      String   // Armazenado como JSON string para simplificar o lab
+  items      OrderItem[]   // Armazenado como JSON string para simplificar o lab
   total      Float
-  status     String
+  freight    Float 
+  status     String   @default("PENDING")
   createdAt  DateTime @default(now())
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  orderId   Int
+  order     Order   @relation(fields: [orderId], references: [id])
+  productId Int
+  quantity  Int
+  price     Float
 }

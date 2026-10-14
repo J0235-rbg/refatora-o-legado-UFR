@@ -1,5 +1,5 @@
 import express from 'express';
-import { OrderController } from './controllers/OrderControllerExample';
+import { OrderController } from './controllers/OrderController';
 
 const app = express();
 app.use(express.json());
@@ -7,6 +7,6 @@ app.use(express.json());
 const orderController = new OrderController();
 
 // Rota única que faz tudo
-app.post('/orders', orderController.processOrder);
+app.post('/orders', orderController.handle);
 
 export default app;
